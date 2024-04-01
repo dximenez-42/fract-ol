@@ -1,7 +1,8 @@
 NAME = fractol
 
 CC = gcc
-CFLAGS = -Werror -Wall -Wextra -fsanitize=address
+CFLAGS = -Werror -Wall -Wextra #-fsanitize=address
+MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 SRCS = 	fractol.c\
 		minilibx/libmlx.a\
@@ -10,8 +11,10 @@ SRCS = 	fractol.c\
 $(NAME) :
 	make all -C libft
 	# make all -C minilibx
-	gcc $(CFLAGS) $(SRCS) -o $(NAME)
+	gcc $(CFLAGS) $(MLXFLAGS) $(SRCS) -o $(NAME)
 
+%.o: %.c
+	gcc $(CFLAGS) $(MLXFLAGS) -c $< -o $@
 
 all : $(NAME)
 

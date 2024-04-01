@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/03/31 12:02:29 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/01 20:10:40 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 
 # include "libft/libft.h"
+# include "minilibx/mlx.h"
 # include <math.h>
 
 #endif
