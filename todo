@@ -1,10 +1,10 @@
-- ESC y x tienen que cerrar la ventana y el programa
+✅ - ESC y x tienen que cerrar la ventana y el programa
 
 - Hacer que el scroll haga zoom y con flechas / wasd se mueva la camara
 
 
-- Recibir parametros (julia / mandelbrot) y dependiendo de cada uno exigir o no más parámetros
-  - Si no recibe parámetros mostrar las opciones disponibles
+✅ - Recibir parametros (julia / mandelbrot) y dependiendo de cada uno exigir o no más parámetros
+✅  - Si no recibe parámetros mostrar las opciones disponibles
 
 Mandelbrot:
 - Mostrar fractal en blanco y negro
