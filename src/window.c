@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:36:50 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/02 17:23:05 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:19:53 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ void	image_to_window(t_vars *vars, int x, int y)
 
 void	init_window(t_vars *vars, t_data *img, int h, int w)
 {
+	vars->zoom = 10;
 	vars->mouse_x = 0;
 	vars->mouse_y = 0;
+	vars->pos_x = 0;
+	vars->pos_y = 0;
 	vars->height = h;
 	vars->width = w;
 	vars->mlx = mlx_init();
@@ -41,4 +44,15 @@ void	init_window(t_vars *vars, t_data *img, int h, int w)
 	img->img = mlx_new_image(vars->mlx, vars->height, vars->width);
 	img->addr = mlx_get_data_addr(img->img,
 			&img->bits_per_pixel, &img->line_length, &img->endian);
+}
+
+void	make_square(t_data *img, int x, int y, int color, int size_x, int size_y)
+{
+	for (size_t i = x; i < x + size_x; i++)
+	{
+		for (size_t j = y; j < y + size_y; j++)
+		{
+			put_pixel(img, i, j, color);
+		}
+	}
 }

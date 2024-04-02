@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/02 17:23:13 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:19:41 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,12 @@ enum Mouse {
 
 enum Keycodes
 {
-	ESCAPE=53,
-	SPACE=49
+	KEY_ESCAPE=53,
+	KEY_SPACE=49,
+	KEY_W=13,
+	KEY_A=0,
+	KEY_S=1,
+	KEY_D=2,
 };
 
 typedef struct	s_data {
@@ -58,6 +62,9 @@ typedef struct	s_vars {
 	int		width;
 	int		mouse_x;
 	int		mouse_y;
+	int		zoom;
+	int		pos_x;
+	int		pos_y;
 	void	*mlx;
 	void	*win;
 	t_data	img;
@@ -67,6 +74,8 @@ void	init_window(t_vars *vars, t_data *img, int h, int w);
 void	image_to_window(t_vars *vars, int x, int y);
 void	put_pixel(t_data *data, int x, int y, int color);
 int		create_trgb(int t, int r, int g, int b);
+
+void	make_square(t_data *img, int x, int y, int color, int size_x, int size_y);
 
 
 void	init_hooks(t_vars *vars);
