@@ -1,0 +1,20 @@
+- ESC y x tienen que cerrar la ventana y el programa
+
+- Hacer que el scroll haga zoom y con flechas / wasd se mueva la camara
+
+
+- Recibir parametros (julia / mandelbrot) y dependiendo de cada uno exigir o no más parámetros
+  - Si no recibe parámetros mostrar las opciones disponibles
+
+Mandelbrot:
+- Mostrar fractal en blanco y negro
+
+Julia:
+- Recibir parámetros y mostrar el fractal correspondiente en blanco y negro
+
+
+- Añadir colores a los fractales
+
+- Hacer que el rango de color cambie (pulsando alguna tecla)
+
+- Hacer que el zoom siga al cursor (OPCIONAL)
