@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/02 18:19:41 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:54:11 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 
 # include "libft/libft.h"
+# include "printf/ft_printf.h"
 # include "mlx/mlx.h"
 # include <math.h>
 
@@ -80,6 +81,7 @@ void	make_square(t_data *img, int x, int y, int color, int size_x, int size_y);
 
 void	init_hooks(t_vars *vars);
 
-
+int		check_input(int argc, char **argv);
+int		input_error(char *p);
 
 #endif

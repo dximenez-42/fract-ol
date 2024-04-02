@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 11:34:12 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/02 18:57:32 by dximenez         ###   ########.fr       */
+/*   Created: 2024/04/02 18:51:07 by dximenez          #+#    #+#             */
+/*   Updated: 2024/04/02 19:00:17 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
-int	main(int argc, char **argv)
+int	check_input(int argc, char **argv)
 {
-	t_vars	vars;
-
-	if (check_input(argc, argv) == 0)
-		return (input_error(argv[0]));
-	init_window(&vars, &vars.img, 1280, 720);
-	init_hooks(&vars);
-	mlx_loop(vars.mlx);
-	free(vars.mlx);
-	free(vars.win);
+	if (argc >= 2)
+	{
+		if (ft_strncmp(argv[1], "julia", 6) == 0 && argc == 4)
+			return (1);
+		else if (ft_strncmp(argv[1], "mandelbrot", 11) == 0 && argc == 2)
+			return (1);
+		else
+			return (0);
+	}
+	else
+		return (0);
 }
