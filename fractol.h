@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/02 18:54:11 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/02 19:11:19 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@
 # include "printf/ft_printf.h"
 # include "mlx/mlx.h"
 # include <math.h>
+
+# ifndef WINDOW_HEIGHT
+#  define WINDOW_HEIGHT 720
+# endif
+
+# ifndef WINDOW_WIDTH
+#  define WINDOW_WIDTH 1280
+# endif
 
 # ifndef TITLE
 #  define TITLE "Fractol"
