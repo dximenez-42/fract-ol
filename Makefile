@@ -5,6 +5,8 @@ CFLAGS = #-Werror -Wall -Wextra #-fsanitize=address
 MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 SRCS = 	fractol.c\
+		src/window.c\
+		src/hooks.c\
 		mlx/libmlx.a\
 		libft/libft.a\
 
