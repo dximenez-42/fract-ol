@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 18:51:07 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/02 19:00:17 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/07 13:52:43 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check_input(int argc, char **argv)
 {
 	if (argc >= 2)
 	{
-		if (ft_strncmp(argv[1], "julia", 6) == 0 && argc == 4)
+		if (ft_strncmp(argv[1], "julia", 6) == 0 && argc == 2)
 			return (1);
 		else if (ft_strncmp(argv[1], "mandelbrot", 11) == 0 && argc == 2)
 			return (1);
