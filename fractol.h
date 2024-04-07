@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/02 19:11:19 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/07 15:06:39 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ typedef struct	s_data {
 typedef struct	s_vars {
 	int		height;
 	int		width;
-	int		mouse_x;
-	int		mouse_y;
 	int		zoom;
 	int		pos_x;
 	int		pos_y;

@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:36:50 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/02 18:19:53 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/07 15:06:43 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ void	image_to_window(t_vars *vars, int x, int y)
 void	init_window(t_vars *vars, t_data *img, int h, int w)
 {
 	vars->zoom = 10;
-	vars->mouse_x = 0;
-	vars->mouse_y = 0;
 	vars->pos_x = 0;
 	vars->pos_y = 0;
 	vars->height = h;
