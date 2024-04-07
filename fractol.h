@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/07 15:06:39 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/07 17:08:33 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,18 @@
 # include "mlx/mlx.h"
 # include <math.h>
 
-# ifndef WINDOW_HEIGHT
+#define BLACK	0x000000
+#define WHITE	0xFFFFFF
+#define PINK 0xFF00FF
+#define PURPLE 0x800080
+#define LIME_GREEN 0x32CD32
+#define CYAN 0x00FFFF
+#define YELLOW 0xFFFF00
+
 #  define WINDOW_HEIGHT 720
-# endif
-
-# ifndef WINDOW_WIDTH
 #  define WINDOW_WIDTH 1280
-# endif
 
-# ifndef TITLE
 #  define TITLE "Fractol"
-# endif
 
 enum {
 	ON_KEYDOWN = 2,
@@ -66,28 +67,41 @@ typedef struct	s_data {
 	int		endian;
 }				t_data;
 
+typedef struct	s_complex
+{
+	double	r;
+	double	i;
+}				t_complex;
+
 typedef struct	s_vars {
-	int		height;
-	int		width;
-	int		zoom;
-	int		pos_x;
-	int		pos_y;
-	void	*mlx;
-	void	*win;
-	t_data	img;
+	double		zoom;
+	int			pos_x;
+	int			pos_y;
+	char		type;
+	t_complex	z;
+	t_complex	c;
+	int			iterations;
+	double		escape;
+	void		*mlx;
+	void		*win;
+	t_data		img;
 }				t_vars;
 
-void	init_window(t_vars *vars, t_data *img, int h, int w);
-void	image_to_window(t_vars *vars, int x, int y);
-void	put_pixel(t_data *data, int x, int y, int color);
-int		create_trgb(int t, int r, int g, int b);
+void		init_window(t_vars *vars, t_data *img);
+void		image_to_window(t_vars *vars, int x, int y);
+void		put_pixel(t_data *data, int x, int y, int color);
+int			create_trgb(int t, int r, int g, int b);
 
-void	make_square(t_data *img, int x, int y, int color, int size_x, int size_y);
+void		init_hooks(t_vars *vars);
 
+void		show_fractal(t_vars *vars);
+void		mandelbrot(t_vars *vars);
 
-void	init_hooks(t_vars *vars);
+double		map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
+t_complex	sum_complex(t_complex z1, t_complex z2);
+t_complex	square_complex(t_complex z);
 
-int		check_input(int argc, char **argv);
-int		input_error(char *p);
+int			check_input(int argc, char **argv, t_vars *vars);
+int			input_error(char *p);
 
 #endif

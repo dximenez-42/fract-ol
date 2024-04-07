@@ -9,6 +9,8 @@ SRCS = 	fractol.c\
 		src/hooks.c\
 		src/input.c\
 		src/errors.c\
+		src/math.c\
+		src/mandelbrot.c\
 		mlx/libmlx.a\
 		libft/libft.a\
 		printf/libftprintf.a\

@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:29:21 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/07 15:06:28 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/07 17:06:04 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static int	keydown_hook(int keycode, t_vars *vars)
 
 static int	mouse_hook(int keycode, int x, int y, t_vars *vars)
 {
-	printf("x: %d\ty: %d\n", x, y);
 	if (keycode == ON_SCROLL_UP && vars->zoom < 1000)
 		vars->zoom++;
 	else if (keycode == ON_SCROLL_DOWN && vars->zoom > 1)
