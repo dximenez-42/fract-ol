@@ -6,18 +6,23 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:29:21 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 21:02:21 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 21:08:04 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
+static void	reset_view(t_vars *vars)
+{
+	vars->zoom = 1.0;
+	vars->pos_x = 0;
+	vars->pos_y = 0;
+}
+
 static int	on_destroy(t_vars *vars)
 {
 	if (vars == NULL)
 		exit(0);
-	// if (vars->mlx && vars->img.img)
-		// mlx_destroy_image(vars->mlx, &vars->img.img);
 	if (vars->mlx && vars->win)
 		mlx_destroy_window(vars->mlx, vars->win);
 	if (vars->mlx)
@@ -41,6 +46,8 @@ static int	keydown_hook(int keycode, t_vars *vars)
 		vars->pos_x += (0.5 * (1 / vars->zoom));
 	else if (keycode == 115)
 		vars->pos_y -= (0.5 * (1 / vars->zoom));
+	else if (keycode == 32)
+		reset_view(vars);
 	else if (keycode == 65362)
 	{
 		vars->iterations += 10;
