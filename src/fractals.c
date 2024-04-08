@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 15:12:08 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 15:27:02 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:46:41 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	calculate_pixel_mandelbrot(int x, int y, t_vars *vars)
 		vars->z = sum_complex(square_complex(vars->z), vars->c);
 		if ((vars->z.r * vars->z.r) + (vars->z.i * vars->z.i) > vars->escape)
 		{
-			color = map(i, BLACK, WHITE, vars->iterations);
+			color = map(i, PSYCHO, WHITE, vars->iterations);
 			put_pixel(&vars->img, x, y, color);
 			return ;
 		}
@@ -51,7 +51,7 @@ static void	calculate_pixel_julia(int x, int y, t_vars *vars)
 		vars->z = sum_complex(square_complex(vars->z), vars->c);
 		if ((vars->z.r * vars->z.r) + (vars->z.i * vars->z.i) > vars->escape)
 		{
-			color = map(i, BLACK, WHITE, vars->iterations);
+			color = map(i, PSYCHO, WHITE, vars->iterations);
 			put_pixel(&vars->img, x, y, color);
 			return ;
 		}

@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:29:21 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 15:34:15 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:45:08 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static int	keydown_hook(int keycode, t_vars *vars)
 	if (keycode == XK_Escape)
 		on_destroy(vars);
 	else if (keycode == 119)
-		vars->pos_y += (0.5 * vars->zoom);
+		vars->pos_y += (0.5 * (1 / vars->zoom));
 	else if (keycode == 97)
-		vars->pos_x -= (0.5 * vars->zoom);
+		vars->pos_x -= (0.5 * (1 / vars->zoom));
 	else if (keycode == 100)
-		vars->pos_x += (0.5 * vars->zoom);
+		vars->pos_x += (0.5 * (1 / vars->zoom));
 	else if (keycode == 115)
-		vars->pos_y -= (0.5 * vars->zoom);
+		vars->pos_y -= (0.5 * (1 / vars->zoom));
 	else if (keycode == 65362)
 	{
 		vars->iterations += 5;

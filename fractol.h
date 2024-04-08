@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 15:34:03 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:42:16 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define LIME_GREEN 0x32CD32
 # define CYAN 0x00FFFF
 # define YELLOW 0xFFFF00
+# define PSYCHO 0xFCBE11
 
 # define WINDOW_HEIGHT 400
 # define WINDOW_WIDTH 400
