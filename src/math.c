@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 16:24:45 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 15:27:06 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 19:09:21 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 double	map(double num, double n_min, double n_max, double o_max)
 {
-	return ((n_max - n_min) * (num - 0) / (o_max - 0) + n_min);
+	return ((n_max - n_min) * num / o_max + n_min);
 }
 
 t_complex	sum_complex(t_complex z1, t_complex z2)
