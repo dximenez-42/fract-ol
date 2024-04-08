@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:29:21 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 15:26:44 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:34:15 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ static int	mouse_hook(int keycode, int x, int y, t_vars *vars)
 	render_fractal(vars);
 	return (0);
 }
-
 
 void	init_hooks(t_vars *vars)
 {

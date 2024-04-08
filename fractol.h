@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 15:18:11 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:34:03 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@
 # include <X11/X.h>
 # include <X11/keysym.h>
 
-#define BLACK	0x000000
-#define WHITE	0xFFFFFF
-#define PINK 0xFF00FF
-#define PURPLE 0x800080
-#define LIME_GREEN 0x32CD32
-#define CYAN 0x00FFFF
-#define YELLOW 0xFFFF00
+# define BLACK	0x000000
+# define WHITE	0xFFFFFF
+# define PINK 0xFF00FF
+# define PURPLE 0x800080
+# define LIME_GREEN 0x32CD32
+# define CYAN 0x00FFFF
+# define YELLOW 0xFFFF00
 
-#  define WINDOW_HEIGHT 800
-#  define WINDOW_WIDTH 800
+# define WINDOW_HEIGHT 400
+# define WINDOW_WIDTH 400
 
-#  define TITLE "Fractol"
+# define TITLE "Fractol"
 
 # define KC_ESCAPE 0xff1b
 # define KC_SPACE 0x0020
@@ -48,7 +48,8 @@
 # define MC_SCROLL_DOWN 5
 
 
-typedef struct s_data {
+typedef struct s_data
+{
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
