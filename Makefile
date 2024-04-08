@@ -15,7 +15,7 @@ SRCS = 	fractol.c\
 
 $(NAME) :
 	make all -C printf
-	# make all -C minilibx-linux
+	make all -C minilibx-linux
 	$(CC) $(CFLAGS) $(SRCS) $(MLXFLAGS) -o $(NAME)
 
 %.o: %.c
@@ -26,11 +26,11 @@ all : $(NAME)
 fclean : clean
 	rm -fr $(NAME)
 	make fclean -C printf
-	# make clean -C minilibx-linux
+	make clean -C minilibx-linux
 
 clean :
 	rm -fr $(NAME)
 	make clean -C printf
-	# make clean -C minilibx-linux
+	make clean -C minilibx-linux
 
 re : fclean all
