@@ -1,7 +1,7 @@
 NAME = fractol
 
 CC = gcc
-CFLAGS = -g -fsanitize=address #-O3 -Werror -Wall -Wextra
+CFLAGS = -O3 #-g -fsanitize=address -Werror -Wall -Wextra
 MLXFLAGS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 
 SRCS = 	fractol.c\
