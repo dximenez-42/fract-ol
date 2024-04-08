@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 00:12:59 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 00:17:19 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@
 
 # define MC_SCROLL_UP 4
 # define MC_SCROLL_DOWN 5
-
 
 typedef struct s_data
 {
