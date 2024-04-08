@@ -1,7 +1,13 @@
 NAME = fractol
 
-CC = gcc
-CFLAGS = -O3 #-g -fsanitize=address -Werror -Wall -Wextra
+# Aún más rápido (pero requiere ICX)
+CC = icx
+CFLAGS = -O3 -xHost -qopt-report=3 -qopt-report-file=stdout -qopenmp -Werror -Wall -Wextra
+
+# Más lento, da fallos visuales por alguna razón
+# CC = gcc
+# CFLAGS = -O3 -fopenmp -Werror -Wall -Wextra
+
 MLXFLAGS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 
 SRCS = 	fractol.c\
