@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 15:12:08 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 00:07:55 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 00:16:23 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	calculate_pixel_mandelbrot(int x, int y, t_vars *vars)
 		z.r = tmp + c.r;
 		if ((z.r * z.r) + (z.i * z.i) > vars->escape)
 		{
-			color = map(i, PSYCHO, WHITE, vars->iterations);
+			color = map(i, vars->color, WHITE, vars->iterations);
 			return (put_pixel(&vars->img, x, y, color));
 		}
 	}
@@ -59,17 +59,13 @@ static void	calculate_pixel_julia(int x, int y, t_vars *vars)
 		z.r = tmp + c.r;
 		if ((z.r * z.r) + (z.i * z.i) > vars->escape)
 		{
-			color = map(i, PSYCHO, WHITE, vars->iterations);
+			color = map(i, vars->color, WHITE, vars->iterations);
 			return (put_pixel(&vars->img, x, y, color));
 		}
 	}
 	put_pixel(&vars->img, x, y, BLACK);
 }
 
-/**
- * z^3 + z^2 + z + 1 = 0
- * (z + 1)(z^2 + 1) = 0
-*/
 static void	calculate_pixel_burning_ship(int x, int y, t_vars *vars)
 {
 	int			i;
@@ -92,7 +88,7 @@ static void	calculate_pixel_burning_ship(int x, int y, t_vars *vars)
 		z.r = tmp + c.r;
 		if ((z.r * z.r) + (z.i * z.i) > vars->escape)
 		{
-			color = map(i, PSYCHO, WHITE, vars->iterations);
+			color = map(i, vars->color, WHITE, vars->iterations);
 			return (put_pixel(&vars->img, x, y, color));
 		}
 	}
@@ -104,7 +100,6 @@ void	render_fractal(t_vars *vars)
 	int	x;
 	int	y;
 
-	// mlx_clear_window(vars->mlx, vars->win);		//TODO comprobar optimizacion
 	y = 0;
 	while (y < WINDOW_HEIGHT)
 	{

@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:36:50 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 19:31:38 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 00:13:14 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	image_to_window(t_vars *vars)
 
 void	init_window(t_vars *vars, t_data *img)
 {
+	vars->color = PSYCHO;
 	vars->escape = 4;
 	vars->iterations = 70;
 	vars->zoom = 1.0;
