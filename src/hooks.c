@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:29:21 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 19:39:46 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 20:44:22 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static int	on_destroy(t_vars *vars)
 {
 	if (vars == NULL)
 		exit(0);
-	if (vars->img.img)
-		mlx_destroy_image(vars->mlx, &vars->img.img);
-	if (vars->win)
+	// if (vars->mlx && vars->img.img)
+		// mlx_destroy_image(vars->mlx, &vars->img.img);
+	if (vars->mlx && vars->win)
 		mlx_destroy_window(vars->mlx, vars->win);
 	if (vars->mlx)
 	{
