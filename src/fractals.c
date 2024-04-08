@@ -72,19 +72,20 @@ void	render_fractal(t_vars *vars)
 	int	y;
 
 	// mlx_clear_window(vars->mlx, vars->win);		//TODO comprobar optimizacion
-	y = 0;
-	while (y < WINDOW_HEIGHT)
+	#pragma omp parallel
 	{
-		x = 0;
-		while (x < WINDOW_WIDTH)
+		t_vars local_vars = *vars;
+		#pragma omp for
+		for (y = 0; y < WINDOW_HEIGHT; ++y)
 		{
-			if (vars->type == 'M')
-				calculate_pixel_mandelbrot(x, y, vars);
-			else
-				calculate_pixel_julia(x, y, vars);
-			++x;
+			for (x = 0; x < WINDOW_WIDTH; ++x)
+			{
+				if (vars->type == 'M')
+					calculate_pixel_mandelbrot(x, y, &local_vars);
+				else
+					calculate_pixel_julia(x, y, &local_vars);
+			}
 		}
-		++y;
 	}
 	image_to_window(vars);
 }
