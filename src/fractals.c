@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 15:12:08 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 16:46:42 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:46:35 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	calculate_pixel_mandelbrot(int x, int y, t_vars *vars)
 {
 	int			i;
 	int			color;
-	t_complex	z_tmp;
+	double		tmp;
 
 	i = 0;
 	vars->z.r = map(x, -2, +2, WINDOW_WIDTH) * (1 / vars->zoom) + vars->pos_x;
@@ -25,10 +25,9 @@ static void	calculate_pixel_mandelbrot(int x, int y, t_vars *vars)
 	vars->c.i = vars->z.i;
 	while (i < vars->iterations)
 	{
-		z_tmp.r = (vars->z.r * vars->z.r) - (vars->z.i * vars->z.i);
-		z_tmp.i = 2 * vars->z.r * vars->z.i;
-		vars->z.r = z_tmp.r + vars->c.r;
-		vars->z.i = z_tmp.i + vars->c.i;
+		tmp = (vars->z.r * vars->z.r) - (vars->z.i * vars->z.i);
+		vars->z.i = 2 * vars->z.r * vars->z.i + vars->c.i;
+		vars->z.r = tmp + vars->c.r;
 		if ((vars->z.r * vars->z.r) + (vars->z.i * vars->z.i) > vars->escape)
 		{
 			color = map(i, PSYCHO, WHITE, vars->iterations);
@@ -44,7 +43,7 @@ static void	calculate_pixel_julia(int x, int y, t_vars *vars)
 {
 	int			i;
 	int			color;
-	t_complex	z_tmp;
+	double		tmp;
 
 	i = 0;
 	vars->z.r = map(x, -3, +3, WINDOW_WIDTH) * (1 / vars->zoom) + vars->pos_x;
@@ -53,10 +52,9 @@ static void	calculate_pixel_julia(int x, int y, t_vars *vars)
 	vars->c.i = vars->julia.i;
 	while (i < vars->iterations)
 	{
-		z_tmp.r = (vars->z.r * vars->z.r) - (vars->z.i * vars->z.i);
-		z_tmp.i = 2 * vars->z.r * vars->z.i;
-		vars->z.r = z_tmp.r + vars->c.r;
-		vars->z.i = z_tmp.i + vars->c.i;
+		tmp = (vars->z.r * vars->z.r) - (vars->z.i * vars->z.i);
+		vars->z.i = 2 * vars->z.r * vars->z.i + vars->c.i;
+		vars->z.r = tmp + vars->c.r;
 		if ((vars->z.r * vars->z.r) + (vars->z.i * vars->z.i) > vars->escape)
 		{
 			color = map(i, PSYCHO, WHITE, vars->iterations);
@@ -73,6 +71,7 @@ void	render_fractal(t_vars *vars)
 	int	x;
 	int	y;
 
+	// mlx_clear_window(vars->mlx, vars->win);		//TODO comprobar optimizacion
 	y = 0;
 	while (y < WINDOW_HEIGHT)
 	{
