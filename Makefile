@@ -1,41 +1,36 @@
 NAME = fractol
 
 CC = gcc
-CFLAGS = #-Werror -Wall -Wextra #-fsanitize=address
-MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
+CFLAGS = #-fsanitize=address -g #-Werror -Wall -Wextra
+MLXFLAGS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext -O3
 
 SRCS = 	fractol.c\
 		src/window.c\
 		src/hooks.c\
 		src/input.c\
-		src/errors.c\
 		src/math.c\
-		src/mandelbrot.c\
-		mlx/libmlx.a\
-		libft/libft.a\
+		src/string.c\
+		src/fractals.c\
 		printf/libftprintf.a\
 
 $(NAME) :
-	make all -C libft
 	make all -C printf
-	# make all -C mlx
-	gcc $(CFLAGS) $(MLXFLAGS) $(SRCS) -o $(NAME)
+	# make all -C minilibx-linux
+	$(CC) $(CFLAGS) $(SRCS) $(MLXFLAGS) -o $(NAME)
 
 %.o: %.c
-	gcc $(CFLAGS) $(MLXFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(MLXFLAGS) -c $< -o $@
 
 all : $(NAME)
 
 fclean : clean
 	rm -fr $(NAME)
-	make fclean -C libft
 	make fclean -C printf
-	# make clean -C mlx
+	# make clean -C minilibx-linux
 
 clean :
 	rm -fr $(NAME)
-	make clean -C libft
 	make clean -C printf
-	# make clean -C mlx
+	# make clean -C minilibx-linux
 
 re : fclean all

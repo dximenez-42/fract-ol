@@ -1,23 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 17:36:54 by dximenez          #+#    #+#             */
-/*   Updated: 2024/01/11 18:12:46 by dximenez         ###   ########.fr       */
+/*   Created: 2024/04/08 14:32:52 by dximenez          #+#    #+#             */
+/*   Updated: 2024/04/08 14:48:31 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../fractol.h"
 
-/**
- * function shall compare not more than n bytes
- * (bytes that follow a NUL character are not compared)
- * s1 -> s2
- * return: difference of the first pair of bytes that are found different
-*/
+static int	is_space(char c)
+{
+	if (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r')
+		return (1);
+	else
+		return (0);
+}
+
+double	atod(char *s)
+{
+	long	num;
+	double	dec;
+	double	power;
+	int		sign;
+
+	num = 0;
+	dec = 0;
+	power = 0.1;
+	sign = 1;
+	while (is_space(*s))
+		++s;
+	if (*s == '+' || *s == '-')
+		if (*s++ == '-')
+			sign = -1;
+	while (*s != '.' && *s != '\0')
+		num = num * 10 + (*s++ - '0');
+	if (*s == '.')
+		++s;
+	while (*s != '\0')
+	{
+		dec = dec + (*s++ - '0') * power;
+		power /= 10;
+	}
+	return ((num + dec) * sign);
+}
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
@@ -29,16 +60,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-
-/*
-int main()
-{
-	char *s1 = "hola";
-	char *s2 = "";
-	int num = 0;
-	// printf("%d\n", ft_strncmp(s1, s2, num));
-	// printf("%d\n", strncmp(s1, s2, num));
-
-	printf("%d\n", strncmp("b", "a", 0));
-}
-*/

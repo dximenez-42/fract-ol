@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:36:50 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/07 17:08:22 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 14:27:59 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,19 @@ void	put_pixel(t_data *data, int x, int y, int color)
 	char	*dst;
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	*(unsigned int *)dst = color;
 }
 
-void	image_to_window(t_vars *vars, int x, int y)
+void	image_to_window(t_vars *vars)
 {
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 }
 
 void	init_window(t_vars *vars, t_data *img)
 {
-	vars->z.r = 0;
-	vars->z.i = 0;
-	vars->c.r = 0;
-	vars->c.i = 0;
 	vars->escape = 4;
-	vars->iterations = 50;
-	if (vars->type == 'J')
-	{
-		vars->c.r = -0.5;
-		vars->c.i = 0.5;
-	}
-	vars->zoom = 10;
+	vars->iterations = 200;
+	vars->zoom = 1.0;
 	vars->pos_x = 0;
 	vars->pos_y = 0;
 	vars->mlx = mlx_init();
