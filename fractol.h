@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 16:46:09 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:37:50 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,6 @@ typedef struct s_vars
 	double		pos_x;
 	double		pos_y;
 	char		type;
-	t_complex	z;
-	t_complex	c;
 	t_complex	julia;
 	int			iterations;
 	double		escape;

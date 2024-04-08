@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:29:21 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 21:08:04 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:38:41 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ static int	keydown_hook(int keycode, t_vars *vars)
 		reset_view(vars);
 	else if (keycode == 65362)
 	{
-		vars->iterations += 10;
+		vars->iterations += 1;
 		ft_printf("Iterations: %d\n", vars->iterations);
 	}
 	else if (keycode == 65364 && vars->iterations > 0)
 	{
-		vars->iterations -= 10;
+		vars->iterations -= 1;
 		ft_printf("Iterations: %d\n", vars->iterations);
 	}
 	render_fractal(vars);

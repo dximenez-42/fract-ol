@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 15:12:08 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 19:31:15 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:47:52 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,20 @@ static void	calculate_pixel_mandelbrot(int x, int y, t_vars *vars)
 	int			i;
 	int			color;
 	double		tmp;
+	t_complex	z;
+	t_complex	c;
 
 	i = 0;
-	vars->z.r = map(x, -3, +3, WINDOW_WIDTH) * (1 / vars->zoom) + vars->pos_x;
-	vars->z.i = map(y, +2, -2, WINDOW_HEIGHT) * (1 / vars->zoom) + vars->pos_y;
-	vars->c.r = vars->z.r;
-	vars->c.i = vars->z.i;
+	z.r = map(x, -3, +3, WINDOW_WIDTH) * (1 / vars->zoom) + vars->pos_x;
+	z.i = map(y, +2, -2, WINDOW_HEIGHT) * (1 / vars->zoom) + vars->pos_y;
+	c.r = z.r;
+	c.i = z.i;
 	while (i < vars->iterations)
 	{
-		tmp = (vars->z.r * vars->z.r) - (vars->z.i * vars->z.i);
-		vars->z.i = 2 * vars->z.r * vars->z.i + vars->c.i;
-		vars->z.r = tmp + vars->c.r;
-		if ((vars->z.r * vars->z.r) + (vars->z.i * vars->z.i) > vars->escape)
+		tmp = (z.r * z.r) - (z.i * z.i);
+		z.i = 2 * z.r * z.i + c.i;
+		z.r = tmp + c.r;
+		if ((z.r * z.r) + (z.i * z.i) > vars->escape)
 		{
 			color = map(i, PSYCHO, WHITE, vars->iterations);
 			put_pixel(&vars->img, x, y, color);
@@ -44,18 +46,20 @@ static void	calculate_pixel_julia(int x, int y, t_vars *vars)
 	int			i;
 	int			color;
 	double		tmp;
+	t_complex	z;
+	t_complex	c;
 
 	i = 0;
-	vars->z.r = map(x, -3, +3, WINDOW_WIDTH) * (1 / vars->zoom) + vars->pos_x;
-	vars->z.i = map(y, +2, -2, WINDOW_HEIGHT) * (1 / vars->zoom) + vars->pos_y;
-	vars->c.r = vars->julia.r;
-	vars->c.i = vars->julia.i;
+	z.r = map(x, -3, +3, WINDOW_WIDTH) * (1 / vars->zoom) + vars->pos_x;
+	z.i = map(y, +2, -2, WINDOW_HEIGHT) * (1 / vars->zoom) + vars->pos_y;
+	c.r = vars->julia.r;
+	c.i = vars->julia.i;
 	while (i < vars->iterations)
 	{
-		tmp = (vars->z.r * vars->z.r) - (vars->z.i * vars->z.i);
-		vars->z.i = 2 * vars->z.r * vars->z.i + vars->c.i;
-		vars->z.r = tmp + vars->c.r;
-		if ((vars->z.r * vars->z.r) + (vars->z.i * vars->z.i) > vars->escape)
+		tmp = (z.r * z.r) - (z.i * z.i);
+		z.i = 2 * z.r * z.i + c.i;
+		z.r = tmp + c.r;
+		if ((z.r * z.r) + (z.i * z.i) > vars->escape)
 		{
 			color = map(i, PSYCHO, WHITE, vars->iterations);
 			put_pixel(&vars->img, x, y, color);
