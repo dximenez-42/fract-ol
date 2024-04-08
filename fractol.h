@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 15:42:16 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:46:09 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 # define YELLOW 0xFFFF00
 # define PSYCHO 0xFCBE11
 
-# define WINDOW_HEIGHT 400
-# define WINDOW_WIDTH 400
+# define WINDOW_HEIGHT 1000
+# define WINDOW_WIDTH 1500
 
 # define TITLE "Fractol"
 
@@ -69,7 +69,7 @@ typedef struct s_vars
 	double		zoom;
 	double		pos_x;
 	double		pos_y;
-	char		*type;
+	char		type;
 	t_complex	z;
 	t_complex	c;
 	t_complex	julia;
