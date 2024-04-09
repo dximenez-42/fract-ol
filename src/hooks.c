@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:29:21 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 23:43:12 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 23:57:10 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static int	keydown_hook(int keycode, t_vars *vars)
 
 static int	mouse_hook(int keycode, int x, int y, t_vars *vars)
 {
+	(void)x;
+	(void)y;
 	if (keycode == Button5)
 		vars->zoom *= 0.6;
 	else if (keycode == Button4)
