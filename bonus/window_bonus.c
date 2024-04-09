@@ -6,16 +6,11 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:36:50 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 23:02:06 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 23:47:47 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol_bonus.h"
-
-int	create_trgb(int t, int r, int g, int b)
-{
-	return (t << 24 | r << 16 | g << 8 | b);
-}
 
 void	put_pixel(t_data *data, int x, int y, int color)
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 22:52:15 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 23:47:43 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,6 @@
 # define WINDOW_WIDTH 1500
 
 # define TITLE "Fractol"
-
-# define KC_ESCAPE 0xff1b
-# define KC_SPACE 0x0020
-
-# define KC_W 0x0057
-# define KC_A 0x0041
-# define KC_S 0x0053
-# define KC_D 0x0044
-
-# define KC_PLUS 0x002b
-# define KC_MINUS 0x002d
-
-# define MC_SCROLL_UP 4
-# define MC_SCROLL_DOWN 5
 
 typedef struct s_data
 {
@@ -81,7 +67,6 @@ typedef struct s_vars
 void		init_window(t_vars *vars, t_data *img);
 void		image_to_window(t_vars *vars);
 void		put_pixel(t_data *data, int x, int y, int color);
-int			create_trgb(int t, int r, int g, int b);
 
 void		init_hooks(t_vars *vars);
 
