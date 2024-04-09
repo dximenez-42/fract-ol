@@ -6,16 +6,11 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:36:50 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 22:52:01 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 23:45:54 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-int	create_trgb(int t, int r, int g, int b)
-{
-	return (t << 24 | r << 16 | g << 8 | b);
-}
 
 void	put_pixel(t_data *data, int x, int y, int color)
 {
@@ -36,8 +31,6 @@ void	init_window(t_vars *vars, t_data *img)
 	vars->escape = 4;
 	vars->iterations = 70;
 	vars->zoom = 1.0;
-	vars->pos_x = 0;
-	vars->pos_y = 0;
 	vars->mlx = mlx_init();
 	vars->win = mlx_new_window(vars->mlx, WINDOW_WIDTH, WINDOW_HEIGHT, TITLE);
 	img->img = mlx_new_image(vars->mlx, WINDOW_WIDTH, WINDOW_HEIGHT);

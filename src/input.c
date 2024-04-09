@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 18:51:07 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 22:52:01 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 23:40:33 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@ int	check_input(int argc, char **argv, t_vars *vars)
 			vars->type = 'M';
 			return (1);
 		}
-		else if (ft_strncmp(argv[1], "burningship", 11) == 0 && argc == 2)
-		{
-			vars->type = 'B';
-			return (1);
-		}
 	}
 	return (0);
 }
@@ -42,6 +37,5 @@ int	input_error(char *p)
 	ft_printf("Error in the input. Input must be:\n");
 	ft_printf("\t%s mandelbrot\n", p);
 	ft_printf("\t%s julia <real> <imaginary>\n", p);
-	ft_printf("\t%s burningship\n", p);
 	return (1);
 }
