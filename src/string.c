@@ -6,11 +6,11 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:32:52 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 14:48:31 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 22:52:01 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "fractol.h"
 
 static int	is_space(char c)
 {

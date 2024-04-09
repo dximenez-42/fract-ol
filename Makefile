@@ -4,7 +4,7 @@ CC = gcc
 CFLAGS = -O3 #-g -fsanitize=address -Werror -Wall -Wextra
 MLXFLAGS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 
-SRCS = 	fractol.c\
+SRCS = 	src/fractol.c\
 		src/window.c\
 		src/hooks.c\
 		src/input.c\

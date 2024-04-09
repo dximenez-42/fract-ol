@@ -6,11 +6,11 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 15:12:08 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 00:16:23 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 22:52:01 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "fractol.h"
 
 static void	calculate_pixel_mandelbrot(int x, int y, t_vars *vars)
 {

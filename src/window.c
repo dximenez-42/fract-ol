@@ -6,11 +6,11 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:36:50 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 00:13:14 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 22:52:01 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "fractol.h"
 
 int	create_trgb(int t, int r, int g, int b)
 {

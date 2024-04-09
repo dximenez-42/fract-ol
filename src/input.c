@@ -6,11 +6,11 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 18:51:07 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 00:06:18 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 22:52:01 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "fractol.h"
 
 int	check_input(int argc, char **argv, t_vars *vars)
 {

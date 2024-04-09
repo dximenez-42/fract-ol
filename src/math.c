@@ -6,11 +6,11 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 16:24:45 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/08 19:09:21 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 22:52:01 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "fractol.h"
 
 double	map(double num, double n_min, double n_max, double o_max)
 {

@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 00:17:19 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/09 22:52:15 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define FRACTOL_H
 
 // # include "libft/libft.h"
-# include "printf/ft_printf.h"
-# include "minilibx-linux/mlx.h"
+# include "../printf/ft_printf.h"
+# include "../minilibx-linux/mlx.h"
 # include <math.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
