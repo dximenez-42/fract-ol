@@ -3,23 +3,23 @@ NAME	= fractol
 CC = gcc
 CFLAGS= -Wall -Werror -Wextra
 
-SRC =		src/fractol.c\
-			src/window.c\
-			src/hooks.c\
-			src/input.c\
-			src/math.c\
-			src/string.c\
-			src/fractals.c
+SRC =	fractol.c\
+		window.c\
+		hooks.c\
+		input.c\
+		math.c\
+		string.c\
+		fractals.c
 SRCS = $(addprefix ./src/, $(SRC))
 
-BONUS_SRC =	bonus/fractol_bonus.c\
-			bonus/window_bonus.c\
-			bonus/hooks_bonus.c\
-			bonus/input_bonus.c\
-			bonus/math_bonus.c\
-			bonus/string_bonus.c\
-			bonus/fractals_bonus.c
-BONUS_SRCS = $(addprefix ./src/, $(SRC))
+BONUS_SRC =	fractol_bonus.c\
+			window_bonus.c\
+			hooks_bonus.c\
+			input_bonus.c\
+			math_bonus.c\
+			string_bonus.c\
+			fractals_bonus.c
+BONUS_SRCS = $(addprefix ./bonus/, $(SRC))
 
 
 NORMAL_OBJS	= $(SRCS:.c=.o)
