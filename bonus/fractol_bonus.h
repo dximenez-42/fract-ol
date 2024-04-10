@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:36 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/10 21:10:09 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/10 21:16:06 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ double		atod(char *s);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 int			check_input(int argc, char **argv, t_vars *vars);
-int			input_error(char *p);
+int			input_error(void);
 
 #endif

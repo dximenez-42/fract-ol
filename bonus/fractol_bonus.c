@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 11:34:12 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/09 23:02:06 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/10 21:16:45 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_vars	vars;
 
 	if (check_input(argc, argv, &vars) == 0)
-		return (input_error(argv[0]));
+		return (input_error());
 	init_window(&vars, &vars.img);
 	init_hooks(&vars);
 	render_fractal(&vars);
