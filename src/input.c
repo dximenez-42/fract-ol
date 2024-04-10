@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 18:51:07 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/10 21:19:59 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/10 21:28:57 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	check_input(int argc, char **argv, t_vars *vars)
 			vars->type = 'J';
 			vars->input.r = atod(argv[2]);
 			vars->input.i = atod(argv[3]);
-			check_valid_args(vars->input.r, argv[2], vars->input.i, argv[3]);
 			return (1);
 		}
 		else if (ft_strncmp(argv[1], "mandelbrot", 11) == 0 && argc == 2)
