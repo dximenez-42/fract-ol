@@ -27,8 +27,8 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 PRINTF	= printf/libftprintf.a
 
-LIBS = -Lminilibx-linux -lmlx_Linux
-LIB_FLAGS = -lX11 -lXext
+LIBS = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+LIB_FLAGS =
 
 all: $(NAME)
 
@@ -37,7 +37,7 @@ $(NAME): $(NORMAL_OBJS) printf
 	$(CC) $(NORMAL_OBJS) $(PRINTF) $(LIBS) $(LIB_FLAGS) -I src/fractol.h -o $(NAME) -v
 
 %.o:%.c
-	$(CC) $(CFLAGS) -c -Imlx -DGL_SILENCE_DEPRECATION $< -o $@ 
+	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@ 
 
 printf:
 	make -C printf
