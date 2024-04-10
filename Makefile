@@ -12,13 +12,13 @@ NORMAL_SRCS = 	src/fractol.c\
 				src/string.c\
 				src/fractals.c
 
-BONUS_SRCS = 	bonus/fractol.c\
-				bonus/window.c\
-				bonus/hooks.c\
-				bonus/input.c\
-				bonus/math.c\
-				bonus/string.c\
-				bonus/fractals.c
+BONUS_SRCS = 	bonus/fractol_bonus.c\
+				bonus/window_bonus.c\
+				bonus/hooks_bonus.c\
+				bonus/input_bonus.c\
+				bonus/math_bonus.c\
+				bonus/string_bonus.c\
+				bonus/fractals_bonus.c
 
 PRINTF_DIR = printf
 PRINTF_LIB = $(PRINTF_DIR)/libftprintf.a
