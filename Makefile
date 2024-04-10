@@ -1,4 +1,4 @@
-NAME	= cub3d
+NAME	= fractol
 
 CC = gcc
 CFLAGS= -Wall -Werror -Wextra
@@ -44,7 +44,7 @@ printf:
 
 bonus: $(BONUS_OBJS)
 	make -C printf
-	$(CC) $(BONUS_OBJS) $(LIBFT) $(LIBS) $(LDFLAGS) -I bonus/fractol_bonus.h -o $(NAME) -v
+	$(CC) $(BONUS_OBJS) $(PRINTF) $(LIBS) $(LIB_FLAGS) -I bonus/fractol_bonus.h -o $(NAME) -v
 
 clean:
 	rm -f $(NORMAL_OBJS)
