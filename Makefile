@@ -44,9 +44,7 @@ printf:
 mlx:
 	make -C minilibx-linux
 
-bonus: $(BONUS_OBJS)
-	printf
-	mlx
+bonus: $(BONUS_OBJS) printf mlx
 	$(CC) $(BONUS_OBJS) $(PRINTF) $(LIBS) -I bonus/fractol_bonus.h -o $(NAME) -v
 
 clean:
