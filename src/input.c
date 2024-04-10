@@ -6,7 +6,7 @@
 /*   By: dximenez <dximenez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 18:51:07 by dximenez          #+#    #+#             */
-/*   Updated: 2024/04/10 21:09:38 by dximenez         ###   ########.fr       */
+/*   Updated: 2024/04/10 21:11:31 by dximenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	check_valid_args(double x, char *a_x, double y, char *a_y)
 {
-	if (x == 0 && ft_strncmp(a_x, "0", ) != 0)
+	if (x == 0 && ft_strncmp(a_x, "0", 1) != 0)
 		exit(1);
-	if (y == 0 && ft_strncmp(a_y, "0", ) != 0)
+	if (y == 0 && ft_strncmp(a_y, "0", 1) != 0)
 		exit(1);
 }
 
