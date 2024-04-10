@@ -4,16 +4,21 @@ CC = gcc
 CFLAGS = -O3 #-g -fsanitize=address -Werror -Wall -Wextra
 MLXFLAGS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 
-SRCS = 	fractol.c\
-		window.c\
-		hooks.c\
-		input.c\
-		math.c\
-		string.c\
-		fractals.c
+NORMAL_SRCS = 	src/fractol.c\
+				src/window.c\
+				src/hooks.c\
+				src/input.c\
+				src/math.c\
+				src/string.c\
+				src/fractals.c
 
-BONUS_SRCS = $(wildcard bonus/*.c)
-NORMAL_SRCS = $(wildcard src/*.c)
+BONUS_SRCS = 	bonus/fractol.c\
+				bonus/window.c\
+				bonus/hooks.c\
+				bonus/input.c\
+				bonus/math.c\
+				bonus/string.c\
+				bonus/fractals.c
 
 PRINTF_DIR = printf
 PRINTF_LIB = $(PRINTF_DIR)/libftprintf.a
