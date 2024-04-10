@@ -27,14 +27,13 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 PRINTF	= printf/libftprintf.a
 
-LIBS = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
-LIB_FLAGS =
+LIBS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 
 all: $(NAME)
 
 
 $(NAME): $(NORMAL_OBJS) printf mlx
-	$(CC) $(NORMAL_OBJS) $(PRINTF) $(LIBS) $(LIB_FLAGS) -I src/fractol.h -o $(NAME) -v
+	$(CC) $(NORMAL_OBJS) $(PRINTF) $(LIBS) -I src/fractol.h -o $(NAME) -v
 
 %.o:%.c
 	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@ 
@@ -48,7 +47,7 @@ mlx:
 bonus: $(BONUS_OBJS)
 	printf
 	mlx
-	$(CC) $(BONUS_OBJS) $(PRINTF) $(LIBS) $(LIB_FLAGS) -I bonus/fractol_bonus.h -o $(NAME) -v
+	$(CC) $(BONUS_OBJS) $(PRINTF) $(LIBS) -I bonus/fractol_bonus.h -o $(NAME) -v
 
 clean:
 	rm -f $(NORMAL_OBJS)
