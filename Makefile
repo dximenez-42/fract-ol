@@ -19,7 +19,7 @@ BONUS_SRC =	fractol_bonus.c\
 			math_bonus.c\
 			string_bonus.c\
 			fractals_bonus.c
-BONUS_SRCS = $(addprefix ./bonus/, $(SRC))
+BONUS_SRCS = $(addprefix ./bonus/, $(BONUS_SRC))
 
 
 NORMAL_OBJS	= $(SRCS:.c=.o)
