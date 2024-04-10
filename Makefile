@@ -33,7 +33,7 @@ LIB_FLAGS =
 all: $(NAME)
 
 
-$(NAME): $(NORMAL_OBJS) printf
+$(NAME): $(NORMAL_OBJS) printf mlx
 	$(CC) $(NORMAL_OBJS) $(PRINTF) $(LIBS) $(LIB_FLAGS) -I src/fractol.h -o $(NAME) -v
 
 %.o:%.c
@@ -42,19 +42,25 @@ $(NAME): $(NORMAL_OBJS) printf
 printf:
 	make -C printf
 
+mlx:
+	make -C minilibx-linux
+
 bonus: $(BONUS_OBJS)
-	make -C printf
+	printf
+	mlx
 	$(CC) $(BONUS_OBJS) $(PRINTF) $(LIBS) $(LIB_FLAGS) -I bonus/fractol_bonus.h -o $(NAME) -v
 
 clean:
 	rm -f $(NORMAL_OBJS)
 	rm -f $(BONUS_OBJS)
-	$(MAKE) fclean -C printf
+	make clean -C printf
+	make clean -C minilibx-linux
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) clean -C printf
+	make fclean -C printf
+	make clean -C minilibx-linux
 
 re: fclean all
 
-.PHONY: fclean clean printf
+.PHONY: fclean clean printf mlx
