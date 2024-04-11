@@ -32,19 +32,17 @@ LIBS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 all: $(NAME)
 
 
-$(NAME): $(NORMAL_OBJS) printf mlx
+$(NAME): $(NORMAL_OBJS)
+	make -C printf
+	make -C minilibx-linux
 	$(CC) $(NORMAL_OBJS) $(PRINTF) $(LIBS) -I src/fractol.h -o $(NAME) -v
 
 %.o:%.c
 	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@ 
 
-printf:
+bonus: $(BONUS_OBJS)
 	make -C printf
-
-mlx:
 	make -C minilibx-linux
-
-bonus: $(BONUS_OBJS) printf mlx
 	$(CC) $(BONUS_OBJS) $(PRINTF) $(LIBS) -I bonus/fractol_bonus.h -o $(NAME) -v
 
 clean:
@@ -60,4 +58,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: fclean clean printf mlx
+.PHONY: fclean clean
